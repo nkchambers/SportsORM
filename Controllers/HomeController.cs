@@ -109,14 +109,14 @@ namespace SportsORM.Controllers
             .ToList();
 
 
-            //--------Every Player with Last Name "Cooper" EXCEPT those with "Joshua" as the First Name-------
+            //-----------Every Player with Last Name "Cooper" EXCEPT those with "Joshua" as the First Name-----------
             ViewBag.PlayersLnCooper_NotFnJoshua = _context.Players
             .Where(pwc_woj => pwc_woj.FirstName !="Joshua")
             .Where(pwc_woj => pwc_woj.LastName.Contains("Cooper"))
             .ToList();
 
 
-            //-------All Players with First Name "Alexander" OR First Name "Wyatt"-----
+            //-----------All Players with First Name "Alexander" OR First Name "Wyatt"------------
             ViewBag.PlayersFirstNameAlexanderOrWhyatt = _context.Players
             .Where(paow => paow.FirstName == "Alexander" || paow.FirstName == "Wyatt")
             .OrderBy(paow => paow.FirstName)
