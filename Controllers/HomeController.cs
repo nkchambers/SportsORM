@@ -74,10 +74,54 @@ namespace SportsORM.Controllers
 
 
             //------------All Teams Whose Location Includes "City"----------------
-            //ViewBag.AllTeamsWithCity = _context.Teams
-            //.Where(twc => twc.TeamName.Length > 1)
-            //.Select(twc => twc.TeamName)
-            //.ToList();
+            ViewBag.AllTeamsWithCity = _context.Teams
+            .Where(twc => twc.Location.Contains("City"))
+            .ToList();
+
+
+            //------------All Teams Whose Names Begin With "T"----------------
+            ViewBag.TeamsStartingWith_T = _context.Teams
+            .Where(tsw_T => tsw_T.TeamName.Contains("T"))
+            .ToList();
+
+
+            //------------All Teams, Ordered Alphabetically by Location----------------
+            ViewBag.TeamsByLocationAlphaOrder = _context.Teams
+            .OrderBy(tbyl_AO => tbyl_AO.Location)
+            .ToList();
+
+
+            //------All Teams, Ordered by Team Name in Reverse Alphabetical Order------
+            ViewBag.TeamsByNameReverseAlphaOrder = _context.Teams
+            .OrderByDescending(tbyn_RA => tbyn_RA.TeamName)
+            .ToList();
+
+
+            //---------------Every Player With Last Name "Cooper"---------------
+            ViewBag.PlayersWithLastNameCooper = _context.Players
+            .Where(pwc => pwc.LastName.Contains("Cooper"))
+            .ToList();
+
+
+            //---------------Every Player With Last Name "Cooper"-----------------
+            ViewBag.PlayersWithFirstNameJoshua = _context.Players
+            .Where(pwj => pwj.FirstName.Contains("Joshua"))
+            .ToList();
+
+
+            //--------Every Player with Last Name "Cooper" EXCEPT those with "Joshua" as the First Name-------
+            ViewBag.PlayersLnCooper_NotFnJoshua = _context.Players
+            .Where(pwc_woj => pwc_woj.FirstName !="Joshua")
+            .Where(pwc_woj => pwc_woj.LastName.Contains("Cooper"))
+            .ToList();
+
+
+            //-------All Players with First Name "Alexander" OR First Name "Wyatt"-----
+            ViewBag.PlayersFirstNameAlexanderOrWhyatt = _context.Players
+            .Where(paow => paow.FirstName == "Alexander" || paow.FirstName == "Wyatt")
+            .OrderBy(paow => paow.FirstName)
+            .ToList();
+
 
             return View("Level1");
         }
