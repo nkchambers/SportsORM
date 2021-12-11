@@ -1,0 +1,178 @@
+<div class="card">
+    <div class="card-header bg-dark text-light">Level 1</div>
+    <div class="card-body">
+        <p>Using the SportsORM, complete all the following queries and show their results on Level1.cshtml.</p>
+        <ol>
+            <li>...all womens' leagues</li>    
+            <li>...all leagues where sport is any type of hockey</li>
+            <li>...all leagues where sport is something OTHER THAN football</li>
+            <li>...all leagues that call themselves "conferences"</li>
+            <li>...all leagues in the Atlantic region</li>
+            <li>...all teams based in Dallas</li>
+            <li>...all teams named the Raptors</li>
+            <li>...all teams whose location includes "City"</li>
+            <li>...all teams whose names begin with "T"</li>
+            <li>...all teams, ordered alphabetically by location</li>
+            <li>...all teams, ordered by team name in reverse alphabetical order</li>
+            <li>...every player with last name "Cooper"</li>
+            <li>...every player with first name "Joshua"</li>
+            <li>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</li>
+            <li>...all players with first name "Alexander" OR first name "Wyatt"</li>
+        </ol>
+
+        <br><br>
+
+        <!------------------------All Womens' Leagues---------------------->
+            <h4>1. All Womens' Leagues</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                    </tr>
+                    @foreach(var wl in ViewBag.WomensLeagues)
+                    {
+                        <tr>
+                            <td>@wl.Name</td>
+                        </tr>
+                    }
+                </table>
+
+
+        <br><br>
+
+
+        <!-------------All Leagues Where Sport is Any Type of Hockey------------>
+            <h4>2. All Leagues Where Sport is Any Type of Hockey</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                        <th>Sport</th>
+                    </tr>
+                    @foreach(var hl in ViewBag.HockeyLeagues)
+                    {
+                        <tr>
+                            <td>@hl.Name</td>
+                            <td>@hl.Sport</td>
+                        </tr>
+                    }
+                </table>
+
+
+        <br><br>
+
+
+        <!---------All Leagues Where Sport is Something OTHER THAN Football---------->
+            <h4>3. All Leagues Where Sport is Something OTHER THAN Football</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                        <th>Sport</th>
+                    </tr>
+                    @foreach(var nonfl in ViewBag.NonFootballLeagues)
+                    {
+                        <tr>
+                            <td>@nonfl.Name</td>
+                            <td>@nonfl.Sport</td>
+                        </tr>
+                    }
+                </table>
+
+
+        <br><br>
+
+
+        <!-------------All Leagues That Call Themselves "Conferences"------------>
+            <h4>4. All Leagues That Call Themselves "Conferences"</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                    </tr>
+                    @foreach(var cl in ViewBag.ConferenceLeagues)
+                    {
+                        <tr>
+                            <td>@cl.Name</td>
+                        </tr>
+                    }
+                </table>
+
+
+        <br><br>
+
+
+        <!-----------------All Leagues in the Atlantic Region---------------->
+            <h4>5. All Leagues in the Atlantic Region</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>League Name</th>
+                    </tr>
+                    @foreach(var arl in ViewBag.AtlanticRegionLeagues)
+                    {
+                        <tr>
+                            <td>@arl.Name</td>
+                        </tr>
+                    }
+                </table>
+
+
+        <br><br>
+
+
+        <!-----------------------All Teams Based in Dallas-------------------->
+            <h4>6. All Teams Based in Dallas</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Location</th>
+                    </tr>
+                    @foreach(var dt in ViewBag.TeamsInDallas)
+                    {
+                        <tr>
+                            <td>@dt.TeamName</td>
+                            <td>@dt.Location</td>
+                        </tr>
+                    }
+                </table>
+
+
+        <br><br>
+
+
+        <!-----------------------All Teams Named the Raptors-------------------->
+            <h4>7. All Teams Named the Raptors</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Location</th>
+                    </tr>
+                    @foreach(var rt in ViewBag.TeamsNamedRaptors)
+                    {
+                        <tr>
+                            <td>@rt.TeamName</td>
+                            <td>@rt.Location</td>
+                        </tr>
+                    }
+                </table>
+
+
+
+        <br><br>
+
+
+        @*<!-------------------All Teams Whose Location Includes "City"---------------->
+            <h4>8. All Teams Whose Location Includes "City"</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Team Name</th>
+                        <th>Location</th>
+                    </tr>
+                    @foreach(var twc in ViewBag.AllTeamsWithCity)
+                    {
+                        <tr>
+                            <td>@twc.TeamName</td>
+                            <td>@twc.Location</td>
+                        </tr>
+                    }
+                </table>*@
+
+
+    </div>
+</div>
